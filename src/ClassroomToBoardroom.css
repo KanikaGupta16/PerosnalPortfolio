@@ -1,0 +1,340 @@
+.classroom-to-boardroom {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2F1B14 0%, #3E2723 50%, #2F1B14 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Wooden texture effect */
+.classroom-to-boardroom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.journey-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #DEB887;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(222, 184, 135, 0.3);
+}
+
+.journey-header p {
+  font-size: 1.1rem;
+  color: #F5DEB3;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.journey-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 5;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Recipe Card Styles - Compact */
+.experience-card {
+  background: linear-gradient(135deg, #F5F5DC 0%, #F0E68C 100%);
+  border-radius: 15px;
+  padding: 1.2rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+  border: 2px solid #D2691E;
+  position: relative;
+  z-index: 10;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed #D2691E;
+  position: relative;
+}
+
+.stage-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8B4513;
+  margin: 0;
+  flex: 1;
+}
+
+.stage-number {
+  background: #D2691E;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ingredients-section,
+.process-section {
+  flex: 1;
+}
+
+.ingredients-section h4,
+.process-section h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #A0522D;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.ingredients-section ul,
+.process-section ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.ingredients-section li,
+.process-section li {
+  color: #654321;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.ingredients-section ul li::marker {
+  color: #DEB887;
+  font-size: 1.1em;
+}
+
+.process-section ol li::marker {
+  color: #D2691E;
+  font-weight: 600;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 2px dashed #D2691E;
+  font-size: 0.8rem;
+}
+
+.duration,
+.environment {
+  color: #8B4513;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Timeline Connector */
+.timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.connector-line {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(to bottom, #DEB887, #D2691E);
+  border-radius: 1px;
+}
+
+.connector-icon {
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+  animation: gentlePulse 2s infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.journey-footer {
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.journey-footer p {
+  color: #F5DEB3;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .classroom-to-boardroom {
+    padding: 1rem 0.5rem;
+  }
+  
+  .journey-header h2 {
+    font-size: 2rem;
+  }
+  
+  .journey-header p {
+    font-size: 1rem;
+  }
+  
+  .journey-timeline {
+    gap: 1rem;
+  }
+  
+  .experience-card {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .card-content {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .stage-icon {
+    font-size: 1.5rem;
+  }
+  
+  .ingredients-section li,
+  .process-section li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .experience-card {
+    padding: 0.8rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .stage-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Warm ambient lighting effect */
+.classroom-to-boardroom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 228, 181, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255, 228, 181, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .connector-icon {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .experience-card {
+    border: 3px solid #000;
+    background: #FFF;
+  }
+  
+  .card-header h3,
+  .ingredients-section h4,
+  .process-section h4 {
+    color: #000;
+  }
+  
+  .ingredients-section li,
+  .process-section li {
+    color: #333;
+  }
+} 

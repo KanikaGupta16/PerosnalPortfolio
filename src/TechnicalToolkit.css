@@ -1,0 +1,205 @@
+/* Technical Toolkit Section */
+.technical-toolkit-section {
+  background: url('/images/bg4.png') center center/cover no-repeat, rgba(18, 22, 20, 0.98);
+  padding: 3rem 0 2rem 0;
+  border-radius: 24px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12);
+  position: relative;
+  overflow: hidden;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.technical-toolkit-section * {
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.technical-toolkit-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 18, 10, 0.4); /* lighter overlay */
+  z-index: 0;
+  pointer-events: none;
+}
+.technical-toolkit-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  color: #b6fcd5;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.measurement-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.measurement-card {
+  background: rgba(255,255,255,0.15); /* increased opacity for better visibility */
+  border: 2px dashed #98FB98;
+  border-radius: 16px;
+  padding: 1.5rem 2.5rem;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px 0 rgba(152,251,152,0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.measurement-card:hover {
+  border-color: #FFA07A;
+  box-shadow: 0 4px 24px 0 rgba(255,160,122,0.18);
+}
+.measurement-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #98FB98;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+.measurement-label {
+  font-size: 1rem;
+  color: #FFA07A;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive: stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .measurement-row {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .measurement-card {
+    min-width: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+.ingredients-list-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(152,251,152,0.06);
+}
+
+.ingredients-group {
+  font-size: 1.12rem;
+  color: #b6fcd5;
+  font-weight: 600;
+  margin-bottom: 1.2rem; /* increased for more space below group title */
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px dashed #ffe4e1; /* lighter, pastel pink accent */
+  letter-spacing: 0.01em;
+  background: none;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* more vertical spacing between skills */
+}
+
+.ingredients-list li {
+  position: relative;
+  font-size: 1.22rem; /* larger font size */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* semi-bold */
+  margin-bottom: 0;
+  padding-left: 1.3em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  color: #ff914d !important; /* solid color instead of gradient */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  text-fill-color: unset !important;
+}
+
+.ingredients-list li::before {
+  content: '\2022';
+  color: #ffe066; /* soft yellow accent for bullet */
+  font-size: 0.85em; /* smaller bullet */
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+}
+
+/* Remove or lighten horizontal lines under each skill (was not present, but ensure no extra lines) */
+
+.ingredients-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin: 0 auto;
+  max-width: 900px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ingredients-column {
+  background: rgba(255, 255, 255, 0.25); /* increased opacity for better visibility */
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(255,186,136,0.08); /* softer, more pastel shadow */
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  min-width: 180px;
+  flex: 1 1 0;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .ingredients-columns {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+    max-width: 100%;
+  }
+  .ingredients-column {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .ingredients-list-container {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .ingredients-group {
+    font-size: 1rem;
+  }
+  .ingredients-group ul li {
+    font-size: 0.97rem;
+  }
+} 

@@ -1,0 +1,387 @@
+.dough-proofing-journey {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2F1B14 0%, #3E2723 50%, #2F1B14 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Wooden counter texture effect */
+.dough-proofing-journey::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.proofing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  z-index: 10;
+  position: relative;
+}
+
+.proofing-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #DEB887;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(222, 184, 135, 0.3);
+  animation: warmGlow 3s ease-in-out infinite alternate;
+}
+
+.proofing-header p {
+  font-size: 1.2rem;
+  color: #F5DEB3;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes warmGlow {
+  from {
+    text-shadow: 0 0 20px rgba(222, 184, 135, 0.3);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(222, 184, 135, 0.6), 0 0 40px rgba(222, 184, 135, 0.3);
+  }
+}
+
+.proofing-scene-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin: 3rem 0;
+  z-index: 5;
+}
+
+/* Proofing Card Styles */
+.proofing-card {
+  position: absolute;
+  background: linear-gradient(135deg, #F5F5DC 0%, #F0E68C 100%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  max-width: 380px;
+  min-width: 320px;
+  transform: translateX(-50%);
+  z-index: 100;
+  animation: cardRise 0.5s ease-out;
+  border: 2px solid #D2691E;
+}
+
+.proofing-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #F5F5DC;
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.proofing-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #8B4513;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.proofing-close-btn:hover {
+  background: rgba(139, 69, 19, 0.1);
+  transform: scale(1.1);
+}
+
+.proofing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed #D2691E;
+}
+
+.proofing-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8B4513;
+  margin: 0;
+  flex: 1;
+}
+
+.proofing-icon {
+  font-size: 2rem;
+  margin-left: 1rem;
+  animation: gentleRise 2.5s infinite;
+}
+
+@keyframes gentleRise {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.proofing-section {
+  margin-bottom: 1rem;
+}
+
+.proofing-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #A0522D;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.proofing-section ul,
+.proofing-section ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.proofing-section li {
+  color: #654321;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.proofing-section ul li::marker {
+  color: #DEB887;
+  font-size: 1.2em;
+}
+
+.proofing-section ol li::marker {
+  color: #D2691E;
+  font-weight: 600;
+}
+
+.proofing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 2px dashed #D2691E;
+  font-size: 0.85rem;
+}
+
+.proofing-time,
+.temperature {
+  color: #8B4513;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Rising steam effect */
+.proofing-card::after {
+  content: '💨';
+  position: absolute;
+  top: -20px;
+  right: -15px;
+  font-size: 1.8rem;
+  animation: steamRise 2s ease-in-out infinite;
+}
+
+@keyframes steamRise {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+.proofing-footer {
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.proofing-footer p {
+  color: #F5DEB3;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dough-proofing-journey {
+    padding: 1rem 0.5rem;
+  }
+  
+  .proofing-header h2 {
+    font-size: 2rem;
+  }
+  
+  .proofing-header p {
+    font-size: 1rem;
+  }
+  
+  .proofing-scene-container {
+    height: 400px;
+  }
+  
+  .proofing-card {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90vw;
+    min-width: 280px;
+    z-index: 1000;
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .proofing-card::before {
+    display: none;
+  }
+  
+  .proofing-close-btn {
+    top: 5px;
+    right: 10px;
+    font-size: 1.8rem;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .proofing-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .proofing-card {
+    padding: 1rem;
+    min-width: 250px;
+  }
+  
+  .proofing-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .proofing-section li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Hover effects for 3D elements */
+.proofing-scene-container canvas {
+  cursor: pointer;
+}
+
+/* Loading state */
+.proofing-scene-container:empty::after {
+  content: 'Preparing your proofing journey...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #F5DEB3;
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .proofing-header h2,
+  .proofing-icon,
+  .proofing-card::after {
+    animation: none;
+  }
+  
+  .proofing-card {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .proofing-card {
+    border: 3px solid #000;
+    background: #FFF;
+  }
+  
+  .proofing-header h3,
+  .proofing-section h4 {
+    color: #000;
+  }
+  
+  .proofing-section li {
+    color: #333;
+  }
+}
+
+/* Warm ambient lighting effect */
+.dough-proofing-journey::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 228, 181, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255, 228, 181, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+} 

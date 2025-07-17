@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .test-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background: url('/images/bg3.png') center center/cover no-repeat;
+            border: 2px solid #fff;
+            margin: 20px 0;
+        }
+        .error {
+            color: #ff6b6b;
+        }
+        .success {
+            color: #51cf66;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background Image Test</h1>
+    <p>Testing if bg3.png is accessible from /images/bg3.png</p>
+    
+    <div class="test-image" id="testImage">
+        <p style="padding: 20px;">If you see this text, the image failed to load</p>
+    </div>
+    
+    <div id="status"></div>
+    
+    <script>
+        const img = new Image();
+        img.onload = function() {
+            document.getElementById('status').innerHTML = '<p class="success">✅ Image loaded successfully!</p>';
+            document.getElementById('testImage').innerHTML = '';
+        };
+        img.onerror = function() {
+            document.getElementById('status').innerHTML = '<p class="error">❌ Image failed to load. Check the path and file.</p>';
+        };
+        img.src = '/images/bg3.png';
+    </script>
+</body>
+</html> 
