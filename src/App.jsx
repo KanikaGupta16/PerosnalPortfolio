@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Hero3DObjects from './Hero3DObjects';
-import Landing3D from './Landing3D';
 import Roadmap from './Roadmap';
 import ExperienceTimeline from './ExperienceTimeline';
 import TechnicalToolkit from './TechnicalToolkit';
@@ -9,7 +8,6 @@ import AboutMe from './AboutMe';
 import './Roadmap.css';
 
 function App() {
-  const [showLanding, setShowLanding] = useState(true);
   const [typedText, setTypedText] = useState('');
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
@@ -106,10 +104,6 @@ function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  if (showLanding) {
-    return <Landing3D onEnter={() => setShowLanding(false)} />;
-  }
 
   return (
     <div className="portfolio-root">
@@ -490,8 +484,8 @@ function App() {
                 </svg>
               </div>
               <h4>Email</h4>
-              <p>kanikagupta7162@gmail.com</p>
-              <a href="mailto:kanikagupta7162@gmail.com" className="contact-btn">Send Email</a>
+              <p className="contact-email">kanikagupta16.official@gmail.com</p>
+              <a href="mailto:kanikagupta16.official@gmail.com" className="contact-btn">Send Email</a>
             </div>
             {/* LinkedIn Card */}
             <div className="contact-card">
@@ -506,8 +500,8 @@ function App() {
                 </svg>
               </div>
               <h4>LinkedIn</h4>
-              <p>Connect professionally</p>
-              <a href="https://linkedin.com/in/kanikagupta16" className="contact-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+              <p className="contact-email">https://www.linkedin.com/in/kanikagupta16/</p>
+              <a href="https://www.linkedin.com/in/kanikagupta16/" className="contact-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
             </div>
             {/* GitHub Card */}
             <div className="contact-card">
@@ -524,8 +518,8 @@ function App() {
                 </svg>
               </div>
               <h4>GitHub</h4>
-              <p>Check out my code</p>
-              <a href="https://github.com/kanika1504" className="contact-btn" target="_blank" rel="noopener noreferrer">View GitHub</a>
+              <p className="contact-email">https://github.com/KanikaGupta16</p>
+              <a href="https://github.com/KanikaGupta16" className="contact-btn" target="_blank" rel="noopener noreferrer">View GitHub</a>
             </div>
           </div>
         </div>

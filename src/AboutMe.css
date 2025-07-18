@@ -1,6 +1,6 @@
 .about-me {
   min-height: 100vh;
-  background: url('/images/bg4.png') center center/contain no-repeat, #18181a !important;
+  background: #18181a !important;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -8,7 +8,6 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  /* Remove any blur or opacity */
   filter: none !important;
   opacity: 1 !important;
   backdrop-filter: none !important;
@@ -264,17 +263,19 @@
 
 /* Removed ingredients-grid to allow full width layout */
 .ingredients-grid {
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
   width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
 }
 
 .ingredients-column {
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
   width: 100% !important;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .ingredients-subheader {
@@ -299,6 +300,10 @@
 .ingredients-list {
   list-style: none;
   padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .ingredients-list li {
@@ -310,6 +315,8 @@
   transition: all 0.3s ease;
   position: relative;
   padding-left: var(--spacing-md);
+  width: 100%;
+  text-align: left;
 }
 
 .ingredients-list li:last-child {
