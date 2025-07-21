@@ -3,10 +3,183 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
+    <title>Kanika Gupta - Computer Science Student, Software Developer, AI/ML Engineer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kanika Gupta - Computer Science Student, Software Developer, AI/ML Engineer at Penn State. EY Software Development Intern, founder of The Equal Edge, and AI/ML enthusiast." />
+    <meta name="keywords" content="Kanika Gupta, Software Developer, AI/ML Engineer, Penn State, EY Intern, React, Python, Machine Learning, Full-stack Developer" />
+    <meta name="author" content="Kanika Gupta" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kanika Gupta - Portfolio" />
+    <meta property="og:description" content="Full-stack developer with AI/ML expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kanika.fyi" />
+    <meta property="og:image" content="https://kanika.fyi/kanika-photo.jpg" />
+    <meta property="og:site_name" content="Kanika Gupta Portfolio" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kanika Gupta - Portfolio" />
+    <meta name="twitter:description" content="Full-stack developer with AI/ML expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
+    <meta name="twitter:image" content="https://kanika.fyi/kanika-photo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kanika.fyi" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/main.jsx" as="script" />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kanika Gupta",
+      "jobTitle": "Software Developer",
+      "url": "https://kanika.fyi",
+      "description": "Computer Science Student, Software Developer, AI/ML Engineer at Penn State University",
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Penn State University"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Ernst & Young"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/kanikagupta16",
+        "https://github.com/kanikagupta16"
+      ],
+      "knowsAbout": [
+        "Machine Learning",
+        "React",
+        "Python",
+        "JavaScript",
+        "Full-stack Development",
+        "AI/ML Engineering"
+      ]
+    }
+    </script>
+    
+    <!-- Fallback styles for content visibility before JavaScript loads -->
+    <style>
+      .seo-fallback {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        z-index: 9999;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .seo-fallback h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+      .seo-fallback p {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+      }
+      .seo-fallback .role {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: #ffd700;
+      }
+      .seo-fallback .projects {
+        margin-top: 2rem;
+      }
+      .seo-fallback .projects h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .seo-fallback .project {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+      }
+      .seo-fallback .project h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #ffd700;
+      }
+      .seo-fallback .project p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .seo-fallback .skills {
+        margin-top: 2rem;
+      }
+      .seo-fallback .skills h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .seo-fallback .skills p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      /* Hide fallback when JavaScript loads */
+      .js-loaded .seo-fallback {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <!-- SEO Fallback Content - Visible to crawlers and when JS is disabled -->
+    <div class="seo-fallback">
+      <h1>Hi There, I'm Kanika.</h1>
+      <p class="role">AI Developer | Creative Problem Solver | Mentor | Tech Innovator</p>
+      <p>Full-stack developer by day, baker by night.</p>
+      <p>Computer Science Student at Penn State University</p>
+      <p>Software Development Intern at Ernst & Young</p>
+      
+      <div class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project">
+          <h3>CropNsoil - AI Multi-cropping Pattern Generator</h3>
+          <p>Won $7,500 at Ag Springboard Challenge. Built with ML, React, Python.</p>
+          <p>Technologies: Machine Learning, HTML, CSS, React, Python</p>
+        </div>
+        <div class="project">
+          <h3>Email Summarizer - EY Internship</h3>
+          <p>AI-based web application using Flask, transformers, OCR, NLP</p>
+          <p>Technologies: Flask, Computer Vision, ML, SQLite</p>
+        </div>
+        <div class="project">
+          <h3>The Equal Edge - Startup</h3>
+          <p>AI-powered platform for international student support</p>
+          <p>Role: Founder & CEO</p>
+        </div>
+      </div>
+      
+      <div class="skills">
+        <h2>Technical Skills</h2>
+        <p><strong>Programming Languages:</strong> Java, Python, C/C++, JavaScript, SQL, TypeScript</p>
+        <p><strong>Frameworks & Tools:</strong> React, Node.js, Flask, TensorFlow, MongoDB, AWS</p>
+        <p><strong>Experience:</strong> Software Development Intern at EY, Teaching Assistant at Penn State</p>
+      </div>
+    </div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Hide fallback content when JavaScript loads -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('js-loaded');
+      });
+    </script>
   </body>
 </html>

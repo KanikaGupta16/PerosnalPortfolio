@@ -6,14 +6,31 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "reactSnap": {
+    "include": ["/"],
+    "destination": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "inlineCss": false,
+    "removeBlobs": false,
+    "removeScriptTags": false,
+    "fixWebpackChunksIssue": false,
+    "skipThirdPartyRequests": false,
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "dependencies": {
     "@react-three/drei": "^10.5.1",
     "@react-three/fiber": "^9.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet-async": "^2.0.5",
+    "react-snap": "^1.23.0",
     "sharp": "^0.34.3",
     "three": "^0.178.0"
   },

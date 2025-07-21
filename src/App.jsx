@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './App.css';
 import Hero3DObjects from './Hero3DObjects';
 import Roadmap from './Roadmap';
@@ -13,6 +14,7 @@ function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [currentTagline, setCurrentTagline] = useState('');
   const [isTaglineTyping, setIsTaglineTyping] = useState(true);
+  const [isClient, setIsClient] = useState(false);
   
   const roles = ['AI Developer', 'Creative Problem Solver', 'Mentor', 'Tech Innovator'];
   const taglines = [
@@ -25,8 +27,15 @@ function App() {
   const deletingSpeed = 50;
   const pauseTime = 2000;
 
+  // Progressive enhancement - only start animations after content is rendered
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Typing animation effect for roles
   useEffect(() => {
+    if (!isClient) return;
+    
     let timeout;
     
     if (isTyping) {
@@ -51,10 +60,12 @@ function App() {
     }
 
     return () => clearTimeout(timeout);
-  }, [typedText, isTyping, currentRoleIndex, roles]);
+  }, [typedText, isTyping, currentRoleIndex, roles, isClient]);
 
   // Typing animation effect for taglines
   useEffect(() => {
+    if (!isClient) return;
+    
     let timeout;
     const currentTaglineIndex = Math.floor(currentRoleIndex / 2) % taglines.length;
     
@@ -79,10 +90,12 @@ function App() {
     }
 
     return () => clearTimeout(timeout);
-  }, [currentTagline, isTaglineTyping, currentRoleIndex, taglines]);
+  }, [currentTagline, isTaglineTyping, currentRoleIndex, taglines, isClient]);
 
   // Smooth scrolling effect
   useEffect(() => {
+    if (!isClient) return;
+    
     const handleScroll = () => {
       const sections = document.querySelectorAll('section[id]');
       const scrollPos = window.scrollY + 100;
@@ -103,10 +116,68 @@ function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <div className="portfolio-root">
+      {/* SEO Meta Tags and Structured Data */}
+      <Helmet>
+        <title>Kanika Gupta - Computer Science Student, Software Developer, AI/ML Engineer</title>
+        <meta name="description" content="Kanika Gupta - Computer Science Student, Software Developer, AI/ML Engineer at Penn State. EY Software Development Intern, founder of The Equal Edge, and AI/ML enthusiast." />
+        <meta name="keywords" content="Kanika Gupta, Software Developer, AI/ML Engineer, Penn State, EY Intern, React, Python, Machine Learning, Full-stack Developer" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Kanika Gupta - Portfolio" />
+        <meta property="og:description" content="Full-stack developer with AI/ML expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kanika.fyi" />
+        <meta property="og:image" content="https://kanika.fyi/kanika-photo.jpg" />
+        <meta property="og:site_name" content="Kanika Gupta Portfolio" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kanika Gupta - Portfolio" />
+        <meta name="twitter:description" content="Full-stack developer with AI/ML expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
+        <meta name="twitter:image" content="https://kanika.fyi/kanika-photo.jpg" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="author" content="Kanika Gupta" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://kanika.fyi" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Kanika Gupta",
+            "jobTitle": "Software Developer",
+            "url": "https://kanika.fyi",
+            "description": "Computer Science Student, Software Developer, AI/ML Engineer at Penn State University",
+            "alumniOf": {
+              "@type": "Organization",
+              "name": "Penn State University"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Ernst & Young"
+            },
+            "sameAs": [
+              "https://linkedin.com/in/kanikagupta16",
+              "https://github.com/kanikagupta16"
+            ],
+            "knowsAbout": [
+              "Machine Learning",
+              "React",
+              "Python",
+              "JavaScript",
+              "Full-stack Development",
+              "AI/ML Engineering"
+            ]
+          })}
+        </script>
+      </Helmet>
+
       {/* Progress Bar */}
       <div className="progress-bar">
         <div className="progress-fill" style={{ width: `${(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%` }}></div>
@@ -130,16 +201,21 @@ function App() {
         </div>
         </nav>
 
-      {/* Hero Section - Enhanced */}
+      {/* Hero Section - Enhanced with SEO-friendly content */}
       <section className="hero hero-pastel-green" style={{position: 'relative', overflow: 'hidden'}}>
         <Hero3DObjects />
         <div className="hero-text-container">
           <div className="hero-icon">
             <div className="icon-shape">●○▲</div>
           </div>
-          <h1 className="hero-title fade-slide-up">Hi There, I'm Kanika.</h1>
+          <h1 className="hero-title fade-slide-up">
+            Hi There, I'm Kanika.
+          </h1>
           <p className="hero-subtitle fade-delay">
-            Full-stack developer by day, baker by night.
+            {isClient ? currentTagline : 'Full-stack developer by day, baker by night.'}
+          </p>
+          <p className="hero-role fade-delay">
+            {isClient ? typedText : 'AI Developer'}
           </p>
           <div className="hero-buttons fade-late">
             <a href="#projects" className="btn btn-primary">View My Work</a>

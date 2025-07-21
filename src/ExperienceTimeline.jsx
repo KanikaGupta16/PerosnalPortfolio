@@ -55,7 +55,7 @@ function CompanyLogo({ company, size = 50 }) {
   const getCompanyInitials = (company) => {
     if (company === 'Snapchat') return '';
     if (company === 'Ernst & Young') return '';
-    if (company === 'Penn State') return 'PS';
+    if (company === 'Penn State') return '';
     if (company === 'Google') return '';
     if (company === 'The Equal Edge') return 'EE';
     if (company === 'Unitru') return '';
