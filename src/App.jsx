@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './App.css';
-import Hero3DObjects from './Hero3DObjects';
+// import Hero3DObjects from './Hero3DObjects'; // Removed three.js landing
 import Roadmap from './Roadmap';
 import ExperienceTimeline from './ExperienceTimeline';
 import TechnicalToolkit from './TechnicalToolkit';
@@ -203,7 +203,7 @@ function App() {
 
       {/* Hero Section - Enhanced with SEO-friendly content */}
       <section className="hero hero-pastel-green" style={{position: 'relative', overflow: 'hidden'}}>
-        <Hero3DObjects />
+        {/* <Hero3DObjects /> */}
         <div className="hero-text-container">
           <div className="hero-icon">
             <div className="icon-shape">●○▲</div>
