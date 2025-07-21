@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 function CroissantModel() {
@@ -30,6 +30,11 @@ function StaticObjects() {
 }
 
 export default function Hero3DObjects() {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  if (!isClient) return null;
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }} camera={{ position: [0, 0, 10], fov: 60 }}>
       <ambientLight intensity={0.7} />
