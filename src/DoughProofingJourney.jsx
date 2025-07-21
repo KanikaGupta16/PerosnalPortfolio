@@ -1,189 +1,175 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Float, Sparkles, Text } from '@react-three/drei';
 import './DoughProofingJourney.css';
 
 // 3D Dough Proofing Elements - Enhanced and Bigger
 function FlourBag({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.2} rotationIntensity={0.3} floatIntensity={0.2}>
-      <group position={position} scale={scale * 1.5} onClick={onClick}>
-        {/* Flour bag body - bigger and more detailed */}
-        <mesh>
-          <boxGeometry args={[0.6, 0.9, 0.3]} />
-          <meshStandardMaterial color="#F5F5DC" roughness={0.8} />
-        </mesh>
-        {/* Bag opening - more realistic */}
-        <mesh position={[0, 0.5, 0]}>
-          <cylinderGeometry args={[0.25, 0.25, 0.15, 8]} />
-          <meshStandardMaterial color="#DEB887" roughness={0.6} />
-        </mesh>
-        {/* Bag folds */}
-        <mesh position={[0.2, 0.2, 0]}>
-          <boxGeometry args={[0.1, 0.3, 0.05]} />
-          <meshStandardMaterial color="#E6D7C3" roughness={0.9} />
-        </mesh>
-        <mesh position={[-0.2, 0.2, 0]}>
-          <boxGeometry args={[0.1, 0.3, 0.05]} />
-          <meshStandardMaterial color="#E6D7C3" roughness={0.9} />
-        </mesh>
-        {/* Flour particles - more dramatic */}
-        {isHovered && <Sparkles count={50} scale={1.2} size={2} speed={0.5} color="#F5F5DC" />}
-      </group>
-    </Float>
+    <group position={position} scale={scale * 1.5} onClick={onClick}>
+      {/* Flour bag body - bigger and more detailed */}
+      <mesh>
+        <boxGeometry args={[0.6, 0.9, 0.3]} />
+        <meshStandardMaterial color="#F5F5DC" roughness={0.8} />
+      </mesh>
+      {/* Bag opening - more realistic */}
+      <mesh position={[0, 0.5, 0]}>
+        <cylinderGeometry args={[0.25, 0.25, 0.15, 8]} />
+        <meshStandardMaterial color="#DEB887" roughness={0.6} />
+      </mesh>
+      {/* Bag folds */}
+      <mesh position={[0.2, 0.2, 0]}>
+        <boxGeometry args={[0.1, 0.3, 0.05]} />
+        <meshStandardMaterial color="#E6D7C3" roughness={0.9} />
+      </mesh>
+      <mesh position={[-0.2, 0.2, 0]}>
+        <boxGeometry args={[0.1, 0.3, 0.05]} />
+        <meshStandardMaterial color="#E6D7C3" roughness={0.9} />
+      </mesh>
+      {/* Flour particles - more dramatic */}
+      {isHovered && <Sparkles count={50} scale={1.2} size={2} speed={0.5} color="#F5F5DC" />}
+    </group>
   );
 }
 
 function YeastJar({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.3}>
-      <group position={position} scale={scale * 1.5} onClick={onClick}>
-        {/* Jar body - bigger and more realistic */}
-        <mesh>
-          <cylinderGeometry args={[0.3, 0.3, 0.6, 12]} />
-          <meshStandardMaterial color="#E6E6FA" transparent opacity={0.8} roughness={0.1} />
-        </mesh>
-        {/* Jar lid - more detailed */}
-        <mesh position={[0, 0.35, 0]}>
-          <cylinderGeometry args={[0.32, 0.32, 0.08, 12]} />
-          <meshStandardMaterial color="#C0C0C0" metalness={0.8} roughness={0.2} />
-        </mesh>
-        {/* Jar label */}
-        <mesh position={[0, 0, 0.16]}>
-          <boxGeometry args={[0.25, 0.4, 0.01]} />
-          <meshStandardMaterial color="#FFE4B5" />
-        </mesh>
-        {/* Bubbles - more dramatic */}
-        {isHovered && <Sparkles count={35} scale={0.8} size={1.5} speed={0.4} color="#87CEEB" />}
-      </group>
-    </Float>
+    <group position={position} scale={scale * 1.5} onClick={onClick}>
+      {/* Jar body - bigger and more realistic */}
+      <mesh>
+        <cylinderGeometry args={[0.3, 0.3, 0.6, 12]} />
+        <meshStandardMaterial color="#E6E6FA" transparent opacity={0.8} roughness={0.1} />
+      </mesh>
+      {/* Jar lid - more detailed */}
+      <mesh position={[0, 0.35, 0]}>
+        <cylinderGeometry args={[0.32, 0.32, 0.08, 12]} />
+        <meshStandardMaterial color="#C0C0C0" metalness={0.8} roughness={0.2} />
+      </mesh>
+      {/* Jar label */}
+      <mesh position={[0, 0, 0.16]}>
+        <boxGeometry args={[0.25, 0.4, 0.01]} />
+        <meshStandardMaterial color="#FFE4B5" />
+      </mesh>
+      {/* Bubbles - more dramatic */}
+      {isHovered && <Sparkles count={35} scale={0.8} size={1.5} speed={0.4} color="#87CEEB" />}
+    </group>
   );
 }
 
 function MixingBowl({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.1} rotationIntensity={0.2} floatIntensity={0.2}>
-      <group position={position} scale={scale * 1.5} onClick={onClick}>
-        {/* Bowl - bigger and more detailed */}
-        <mesh>
-          <cylinderGeometry args={[0.45, 0.4, 0.2, 12]} />
-          <meshStandardMaterial color="#F0E68C" roughness={0.3} />
-        </mesh>
-        {/* Bowl rim */}
-        <mesh position={[0, 0.1, 0]}>
-          <torusGeometry args={[0.45, 0.05, 8, 12]} />
-          <meshStandardMaterial color="#DAA520" metalness={0.3} />
-        </mesh>
-        {/* Dough inside - more realistic */}
-        <mesh position={[0, -0.05, 0]}>
-          <sphereGeometry args={[0.3, 12, 8]} />
-          <meshStandardMaterial color="#DEB887" roughness={0.8} />
-        </mesh>
-        {/* Dough texture */}
-        <mesh position={[0.1, -0.05, 0.1]}>
-          <sphereGeometry args={[0.05, 8, 6]} />
-          <meshStandardMaterial color="#CD853F" roughness={0.9} />
-        </mesh>
-        {/* Flour dust - more dramatic */}
-        {isHovered && <Sparkles count={40} scale={0.8} size={1.8} speed={0.3} color="#F5F5DC" />}
-      </group>
-    </Float>
+    <group position={position} scale={scale * 1.5} onClick={onClick}>
+      {/* Bowl - bigger and more detailed */}
+      <mesh>
+        <cylinderGeometry args={[0.45, 0.4, 0.2, 12]} />
+        <meshStandardMaterial color="#F0E68C" roughness={0.3} />
+      </mesh>
+      {/* Bowl rim */}
+      <mesh position={[0, 0.1, 0]}>
+        <torusGeometry args={[0.45, 0.05, 8, 12]} />
+        <meshStandardMaterial color="#DAA520" metalness={0.3} />
+      </mesh>
+      {/* Dough inside - more realistic */}
+      <mesh position={[0, -0.05, 0]}>
+        <sphereGeometry args={[0.3, 12, 8]} />
+        <meshStandardMaterial color="#DEB887" roughness={0.8} />
+      </mesh>
+      {/* Dough texture */}
+      <mesh position={[0.1, -0.05, 0.1]}>
+        <sphereGeometry args={[0.05, 8, 6]} />
+        <meshStandardMaterial color="#CD853F" roughness={0.9} />
+      </mesh>
+      {/* Flour dust - more dramatic */}
+      {isHovered && <Sparkles count={40} scale={0.8} size={1.8} speed={0.3} color="#F5F5DC" />}
+    </group>
   );
 }
 
 function RisingDough({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.8} rotationIntensity={0.5} floatIntensity={0.4}>
-      <group position={position} scale={scale * 1.5} onClick={onClick}>
-        {/* Dough base - bigger and more detailed */}
-        <mesh>
-          <cylinderGeometry args={[0.4, 0.4, 0.15, 12]} />
-          <meshStandardMaterial color="#DEB887" roughness={0.7} />
-        </mesh>
-        {/* Rising dough bubbles - more dramatic */}
-        <mesh position={[0, 0.15, 0]}>
-          <sphereGeometry args={[0.25, 12, 8]} />
-          <meshStandardMaterial color="#F4A460" roughness={0.6} />
-        </mesh>
-        {/* Additional rising bubbles */}
-        <mesh position={[0.15, 0.2, 0.1]}>
-          <sphereGeometry args={[0.1, 8, 6]} />
-          <meshStandardMaterial color="#D2691E" roughness={0.5} />
-        </mesh>
-        <mesh position={[-0.15, 0.18, -0.1]}>
-          <sphereGeometry args={[0.08, 8, 6]} />
-          <meshStandardMaterial color="#CD853F" roughness={0.5} />
-        </mesh>
-        {/* Steam/rising effect - more dramatic */}
-        {isHovered && <Sparkles count={60} scale={1.2} size={2.5} speed={0.6} color="#E6E6FA" />}
-      </group>
-    </Float>
+    <group position={position} scale={scale * 1.5} onClick={onClick}>
+      {/* Dough base - bigger and more detailed */}
+      <mesh>
+        <cylinderGeometry args={[0.4, 0.4, 0.15, 12]} />
+        <meshStandardMaterial color="#DEB887" roughness={0.7} />
+      </mesh>
+      {/* Rising dough bubbles - more dramatic */}
+      <mesh position={[0, 0.15, 0]}>
+        <sphereGeometry args={[0.25, 12, 8]} />
+        <meshStandardMaterial color="#F4A460" roughness={0.6} />
+      </mesh>
+      {/* Additional rising bubbles */}
+      <mesh position={[0.15, 0.2, 0.1]}>
+        <sphereGeometry args={[0.1, 8, 6]} />
+        <meshStandardMaterial color="#D2691E" roughness={0.5} />
+      </mesh>
+      <mesh position={[-0.15, 0.18, -0.1]}>
+        <sphereGeometry args={[0.08, 8, 6]} />
+        <meshStandardMaterial color="#CD853F" roughness={0.5} />
+      </mesh>
+      {/* Steam/rising effect - more dramatic */}
+      {isHovered && <Sparkles count={60} scale={1.2} size={2.5} speed={0.6} color="#E6E6FA" />}
+    </group>
   );
 }
 
 function Oven({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.0} rotationIntensity={0.2} floatIntensity={0.1}>
-      <group position={position} scale={scale * 1.5} onClick={onClick}>
-        {/* Oven body - bigger and more detailed */}
-        <mesh>
-          <boxGeometry args={[0.75, 0.6, 0.45]} />
-          <meshStandardMaterial color="#696969" roughness={0.8} />
-        </mesh>
-        {/* Oven door - more realistic */}
-        <mesh position={[0, 0, 0.24]}>
-          <boxGeometry args={[0.7, 0.55, 0.03]} />
-          <meshStandardMaterial color="#A9A9A9" metalness={0.5} roughness={0.3} />
-        </mesh>
-        {/* Oven handle */}
-        <mesh position={[0, 0, 0.27]}>
-          <cylinderGeometry args={[0.02, 0.02, 0.15, 8]} />
-          <meshStandardMaterial color="#C0C0C0" metalness={0.8} />
-        </mesh>
-        {/* Oven window */}
-        <mesh position={[0, 0, 0.25]}>
-          <boxGeometry args={[0.3, 0.2, 0.01]} />
-          <meshStandardMaterial color="#87CEEB" transparent opacity={0.7} />
-        </mesh>
-        {/* Heat waves - more dramatic */}
-        {isHovered && <Sparkles count={70} scale={1.5} size={3} speed={0.7} color="#FF4500" />}
-      </group>
-    </Float>
+    <group position={position} scale={scale * 1.5} onClick={onClick}>
+      {/* Oven body - bigger and more detailed */}
+      <mesh>
+        <boxGeometry args={[0.75, 0.6, 0.45]} />
+        <meshStandardMaterial color="#696969" roughness={0.8} />
+      </mesh>
+      {/* Oven door - more realistic */}
+      <mesh position={[0, 0, 0.24]}>
+        <boxGeometry args={[0.7, 0.55, 0.03]} />
+        <meshStandardMaterial color="#A9A9A9" metalness={0.5} roughness={0.3} />
+      </mesh>
+      {/* Oven handle */}
+      <mesh position={[0, 0, 0.27]}>
+        <cylinderGeometry args={[0.02, 0.02, 0.15, 8]} />
+        <meshStandardMaterial color="#C0C0C0" metalness={0.8} />
+      </mesh>
+      {/* Oven window */}
+      <mesh position={[0, 0, 0.25]}>
+        <boxGeometry args={[0.3, 0.2, 0.01]} />
+        <meshStandardMaterial color="#87CEEB" transparent opacity={0.7} />
+      </mesh>
+      {/* Heat waves - more dramatic */}
+      {isHovered && <Sparkles count={70} scale={1.5} size={3} speed={0.7} color="#FF4500" />}
+    </group>
   );
 }
 
 function FreshBread({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.3} rotationIntensity={0.3} floatIntensity={0.3}>
-      <group position={position} scale={scale * 1.5} onClick={onClick}>
-        {/* Bread loaf - bigger and more detailed */}
-        <mesh>
-          <cylinderGeometry args={[0.3, 0.3, 0.6, 12]} />
-          <meshStandardMaterial color="#D2691E" roughness={0.7} />
-        </mesh>
-        {/* Bread top - more realistic */}
-        <mesh position={[0, 0.35, 0]}>
-          <sphereGeometry args={[0.3, 12, 8]} />
-          <meshStandardMaterial color="#CD853F" roughness={0.6} />
-        </mesh>
-        {/* Bread scoring */}
-        <mesh position={[0, 0.35, 0.15]}>
-          <boxGeometry args={[0.2, 0.01, 0.01]} />
-          <meshStandardMaterial color="#8B4513" />
-        </mesh>
-        <mesh position={[0, 0.35, -0.15]}>
-          <boxGeometry args={[0.2, 0.01, 0.01]} />
-          <meshStandardMaterial color="#8B4513" />
-        </mesh>
-        {/* Bread texture details */}
-        <mesh position={[0.1, 0.3, 0.1]}>
-          <sphereGeometry args={[0.02, 6, 4]} />
-          <meshStandardMaterial color="#A0522D" roughness={0.9} />
-        </mesh>
-        {/* Steam from fresh bread - more dramatic */}
-        {isHovered && <Sparkles count={50} scale={1.0} size={2} speed={0.5} color="#F0F8FF" />}
-      </group>
-    </Float>
+    <group position={position} scale={scale * 1.5} onClick={onClick}>
+      {/* Bread loaf - bigger and more detailed */}
+      <mesh>
+        <cylinderGeometry args={[0.3, 0.3, 0.6, 12]} />
+        <meshStandardMaterial color="#D2691E" roughness={0.7} />
+      </mesh>
+      {/* Bread top - more realistic */}
+      <mesh position={[0, 0.35, 0]}>
+        <sphereGeometry args={[0.3, 12, 8]} />
+        <meshStandardMaterial color="#CD853F" roughness={0.6} />
+      </mesh>
+      {/* Bread scoring */}
+      <mesh position={[0, 0.35, 0.15]}>
+        <boxGeometry args={[0.2, 0.01, 0.01]} />
+        <meshStandardMaterial color="#8B4513" />
+      </mesh>
+      <mesh position={[0, 0.35, -0.15]}>
+        <boxGeometry args={[0.2, 0.01, 0.01]} />
+        <meshStandardMaterial color="#8B4513" />
+      </mesh>
+      {/* Bread texture details */}
+      <mesh position={[0.1, 0.3, 0.1]}>
+        <sphereGeometry args={[0.02, 6, 4]} />
+        <meshStandardMaterial color="#A0522D" roughness={0.9} />
+      </mesh>
+      {/* Steam from fresh bread - more dramatic */}
+      {isHovered && <Sparkles count={50} scale={1.0} size={2} speed={0.5} color="#F0F8FF" />}
+    </group>
   );
 }
 

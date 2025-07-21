@@ -1,114 +1,102 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Float, Sparkles } from '@react-three/drei';
 import './BakingRoadmap.css';
 
 // 3D Baking Icons Components
 function CupcakeIcon({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-      <group position={position} scale={scale} onClick={onClick}>
-        {/* Cupcake base */}
-        <mesh>
-          <cylinderGeometry args={[0.3, 0.4, 0.2, 8]} />
-          <meshStandardMaterial color="#FFB6C1" />
-        </mesh>
-        {/* Cupcake top */}
-        <mesh position={[0, 0.25, 0]}>
-          <sphereGeometry args={[0.25, 8, 6]} />
-          <meshStandardMaterial color="#FFC0CB" />
-        </mesh>
-        {/* Sprinkles */}
-        {isHovered && <Sparkles count={20} scale={0.5} size={2} speed={0.3} />}
-      </group>
-    </Float>
+    <group position={position} scale={scale} onClick={onClick}>
+      {/* Cupcake base */}
+      <mesh>
+        <cylinderGeometry args={[0.3, 0.4, 0.2, 8]} />
+        <meshStandardMaterial color="#FFB6C1" />
+      </mesh>
+      {/* Cupcake top */}
+      <mesh position={[0, 0.25, 0]}>
+        <sphereGeometry args={[0.25, 8, 6]} />
+        <meshStandardMaterial color="#FFC0CB" />
+      </mesh>
+      {/* Sprinkles */}
+      {isHovered && <Sparkles count={20} scale={0.5} size={2} speed={0.3} />}
+    </group>
   );
 }
 
 function RollingPinIcon({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.2} rotationIntensity={0.3} floatIntensity={0.3}>
-      <group position={position} scale={scale} onClick={onClick}>
-        <mesh>
-          <cylinderGeometry args={[0.1, 0.1, 0.8, 8]} />
-          <meshStandardMaterial color="#DEB887" />
-        </mesh>
-        {/* Handles */}
-        <mesh position={[0, 0.4, 0]}>
-          <cylinderGeometry args={[0.05, 0.05, 0.2, 8]} />
-          <meshStandardMaterial color="#8B4513" />
-        </mesh>
-        <mesh position={[0, -0.4, 0]}>
-          <cylinderGeometry args={[0.05, 0.05, 0.2, 8]} />
-          <meshStandardMaterial color="#8B4513" />
-        </mesh>
-        {isHovered && <Sparkles count={15} scale={0.4} size={1.5} speed={0.2} />}
-      </group>
-    </Float>
+    <group position={position} scale={scale} onClick={onClick}>
+      <mesh>
+        <cylinderGeometry args={[0.1, 0.1, 0.8, 8]} />
+        <meshStandardMaterial color="#DEB887" />
+      </mesh>
+      {/* Handles */}
+      <mesh position={[0, 0.4, 0]}>
+        <cylinderGeometry args={[0.05, 0.05, 0.2, 8]} />
+        <meshStandardMaterial color="#8B4513" />
+      </mesh>
+      <mesh position={[0, -0.4, 0]}>
+        <cylinderGeometry args={[0.05, 0.05, 0.2, 8]} />
+        <meshStandardMaterial color="#8B4513" />
+      </mesh>
+      {isHovered && <Sparkles count={15} scale={0.4} size={1.5} speed={0.2} />}
+    </group>
   );
 }
 
 function WhiskIcon({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.8} rotationIntensity={0.4} floatIntensity={0.4}>
-      <group position={position} scale={scale} onClick={onClick}>
-        {/* Handle */}
-        <mesh position={[0, 0.3, 0]}>
-          <cylinderGeometry args={[0.03, 0.03, 0.6, 8]} />
-          <meshStandardMaterial color="#8B4513" />
-        </mesh>
-        {/* Whisk wires */}
-        <mesh position={[0, -0.1, 0]}>
-          <sphereGeometry args={[0.15, 8, 6]} />
-          <meshStandardMaterial color="#C0C0C0" wireframe />
-        </mesh>
-        {isHovered && <Sparkles count={12} scale={0.3} size={1} speed={0.25} />}
-      </group>
-    </Float>
+    <group position={position} scale={scale} onClick={onClick}>
+      {/* Handle */}
+      <mesh position={[0, 0.3, 0]}>
+        <cylinderGeometry args={[0.03, 0.03, 0.6, 8]} />
+        <meshStandardMaterial color="#8B4513" />
+      </mesh>
+      {/* Whisk wires */}
+      <mesh position={[0, -0.1, 0]}>
+        <sphereGeometry args={[0.15, 8, 6]} />
+        <meshStandardMaterial color="#C0C0C0" wireframe />
+      </mesh>
+      {isHovered && <Sparkles count={12} scale={0.3} size={1} speed={0.25} />}
+    </group>
   );
 }
 
 function PipingBagIcon({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.3} rotationIntensity={0.2} floatIntensity={0.3}>
-      <group position={position} scale={scale} onClick={onClick}>
-        {/* Bag body */}
-        <mesh>
-          <coneGeometry args={[0.2, 0.6, 8]} />
-          <meshStandardMaterial color="#98FB98" />
-        </mesh>
-        {/* Tip */}
-        <mesh position={[0, -0.35, 0]}>
-          <cylinderGeometry args={[0.05, 0.02, 0.1, 8]} />
-          <meshStandardMaterial color="#C0C0C0" />
-        </mesh>
-        {isHovered && <Sparkles count={18} scale={0.4} size={1.8} speed={0.3} />}
-      </group>
-    </Float>
+    <group position={position} scale={scale} onClick={onClick}>
+      {/* Bag body */}
+      <mesh>
+        <coneGeometry args={[0.2, 0.6, 8]} />
+        <meshStandardMaterial color="#98FB98" />
+      </mesh>
+      {/* Tip */}
+      <mesh position={[0, -0.35, 0]}>
+        <cylinderGeometry args={[0.05, 0.02, 0.1, 8]} />
+        <meshStandardMaterial color="#C0C0C0" />
+      </mesh>
+      {isHovered && <Sparkles count={18} scale={0.4} size={1.8} speed={0.3} />}
+    </group>
   );
 }
 
 function MixerIcon({ position, scale = 1, onClick, isHovered }) {
   return (
-    <Float speed={1.1} rotationIntensity={0.3} floatIntensity={0.2}>
-      <group position={position} scale={scale} onClick={onClick}>
-        {/* Mixer body */}
-        <mesh>
-          <cylinderGeometry args={[0.15, 0.15, 0.4, 8]} />
-          <meshStandardMaterial color="#FFA07A" />
-        </mesh>
-        {/* Beaters */}
-        <mesh position={[0, -0.3, 0]}>
-          <cylinderGeometry args={[0.02, 0.02, 0.4, 8]} />
-          <meshStandardMaterial color="#C0C0C0" />
-        </mesh>
-        <mesh position={[0.05, -0.3, 0]}>
-          <cylinderGeometry args={[0.02, 0.02, 0.4, 8]} />
-          <meshStandardMaterial color="#C0C0C0" />
-        </mesh>
-        {isHovered && <Sparkles count={25} scale={0.5} size={2} speed={0.4} />}
-      </group>
-    </Float>
+    <group position={position} scale={scale} onClick={onClick}>
+      {/* Mixer body */}
+      <mesh>
+        <cylinderGeometry args={[0.15, 0.15, 0.4, 8]} />
+        <meshStandardMaterial color="#FFA07A" />
+      </mesh>
+      {/* Beaters */}
+      <mesh position={[0, -0.3, 0]}>
+        <cylinderGeometry args={[0.02, 0.02, 0.4, 8]} />
+        <meshStandardMaterial color="#C0C0C0" />
+      </mesh>
+      <mesh position={[0.05, -0.3, 0]}>
+        <cylinderGeometry args={[0.02, 0.02, 0.4, 8]} />
+        <meshStandardMaterial color="#C0C0C0" />
+      </mesh>
+      {isHovered && <Sparkles count={25} scale={0.5} size={2} speed={0.4} />}
+    </group>
   );
 }
 
