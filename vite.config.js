@@ -18,7 +18,8 @@ export default defineConfig({
           three: ['three', '@react-three/fiber', '@react-three/drei']
         }
       }
-    }
+    },
+    target: 'es2018'
   },
   // Optimize for development
   server: {

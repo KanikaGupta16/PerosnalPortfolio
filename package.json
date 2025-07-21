@@ -12,6 +12,7 @@
   },
   "reactSnap": {
     "include": ["/"],
+    "source": "dist",
     "destination": "dist",
     "minifyHtml": {
       "collapseWhitespace": false,
