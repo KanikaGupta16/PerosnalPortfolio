@@ -199,14 +199,79 @@
   }
 }
 
-@media (max-width: 500px) {
-  .ingredients-list-container {
-    padding: 1.2rem 0.5rem 1rem 0.5rem;
+@media (max-width: 700px) {
+  .measurement-card, .ingredients-column {
+    padding: 0.5rem 0.7rem !important;
+    border-radius: 8px !important;
+    min-width: 0 !important;
+    font-size: 0.9rem !important;
+  }
+  .measurement-amount {
+    font-size: 1.1rem !important;
+  }
+  .measurement-label {
+    font-size: 0.85rem !important;
   }
   .ingredients-group {
-    font-size: 1rem;
+    font-size: 0.95rem !important;
   }
-  .ingredients-group ul li {
-    font-size: 0.97rem;
+  .ingredients-list li {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .measurement-card, .ingredients-column {
+    padding: 0.3rem 0.3rem !important;
+    border-radius: 6px !important;
+    min-width: 0 !important;
+    font-size: 0.8rem !important;
+  }
+  .measurement-amount {
+    font-size: 0.95rem !important;
+  }
+  .measurement-label {
+    font-size: 0.7rem !important;
+  }
+  .ingredients-group {
+    font-size: 0.85rem !important;
+  }
+  .ingredients-list li {
+    font-size: 0.85rem !important;
+  }
+} 
+
+@media (max-width: 700px) {
+  .measurement-row, .measurement-card, .measurement-amount, .measurement-label, .ingredients-group, .ingredients-list, .ingredients-list li, .ingredients-columns, .ingredients-column {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .ingredients-list {
+    align-items: center !important;
+  }
+  .ingredients-list li {
+    width: 100%;
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+@media (max-width: 500px) {
+  .measurement-row, .measurement-card, .measurement-amount, .measurement-label, .ingredients-group, .ingredients-list, .ingredients-list li, .ingredients-columns, .ingredients-column {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .ingredients-list {
+    align-items: center !important;
+  }
+  .ingredients-list li {
+    width: 100%;
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 } 
