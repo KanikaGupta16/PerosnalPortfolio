@@ -35,7 +35,7 @@ const AboutMe = () => {
                 <div className="ingredients-grid">
                   <div className="ingredients-column">
                     <ul className="ingredients-list">
-                      <li>Computer Science degree + AI/ML specialization</li>
+                      <li>Computer Science degree + Product Development specialization</li>
                       <li>Python, Java, TypeScript, React, Flask expertise</li>
                       <li>Experience with NLP, OCR, computer vision</li>
                     </ul>

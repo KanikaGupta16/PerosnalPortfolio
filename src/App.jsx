@@ -18,10 +18,8 @@ function App() {
   
   const roles = ['AI Developer', 'Creative Problem Solver', 'Mentor', 'Tech Innovator'];
   const taglines = [
-    'Building impactful products, one feature at a time.',
-    'Turning ideas into user-centric solutions.',
-    'Product-minded SWE: code, ship, iterate.',
-    'Obsessed with user experience and product quality.'
+    'Software Engineer | Product Builder | Problem Solver',
+    'Product-minded SWE: code, ship, iterate.'
   ];
   const typingSpeed = 100;
   const deletingSpeed = 50;
@@ -128,7 +126,7 @@ function App() {
         
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Kanika Gupta - Portfolio" />
-        <meta property="og:description" content="Full-stack developer with AI/ML expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
+        <meta property="og:description" content="Full-stack developer with full-stack development expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kanika.fyi" />
         <meta property="og:image" content="https://kanika.fyi/kanika-photo.jpg" />
@@ -137,7 +135,7 @@ function App() {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kanika Gupta - Portfolio" />
-        <meta name="twitter:description" content="Full-stack developer with AI/ML expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
+        <meta name="twitter:description" content="Full-stack developer with full-stack development expertise. EY intern, Penn State CS student, founder of The Equal Edge." />
         <meta name="twitter:image" content="https://kanika.fyi/kanika-photo.jpg" />
         
         {/* Additional SEO Meta Tags */}
@@ -239,25 +237,45 @@ function App() {
       <section id="leadership" className="leadership-section">
         <div className="container">
           <h2 className="section-title">Leadership Journey</h2>
-          <p className="section-subtitle">Building communities, leading teams, driving innovation</p>
           <div className="leadership-timeline">
-            {/* Outreach Head - Google Developer Student Club */}
-            <div className="leadership-item" data-achievement="Led cross-functional outreach initiatives and community growth">
+            {/* President - Google Developer Student Club */}
+            <div className="leadership-item" data-achievement="Led cross-functional initiatives and community growth as club president">
               <div className="leadership-logo">
                 <img src="/images/gdsc.png" alt="Google Developer Student Club Logo" className="club-logo" />
               </div>
               <div className="leadership-content">
-                <h3 className="leadership-title">Outreach Head</h3>
+                <h3 className="leadership-title">Vice President</h3>
                 <p className="leadership-org">Penn State Google Developer Student Club</p>
                 <p className="leadership-date">January 2024 – January 2025</p>
                 <div className="leadership-description">
-                  <p>Spearheaded community outreach and external partnerships for Penn State's premier tech club</p>
+                  <p>Led Penn State's premier tech club as President, overseeing all operations and strategic initiatives</p>
                   <ul className="leadership-achievements hidden">
                     <li>Led cross-functional team leadership initiatives</li>
                     <li>Developed strategic partnerships with external organizations</li>
                     <li>Coordinated outreach programs to expand club membership</li>
                     <li>Managed community engagement and networking events</li>
-                    <li>Previously served as Marketing Lead (Jun 2023 - Jan 2025)</li>
+                    <li>Previously served as Outreach Head and Marketing Lead (Jun 2023 - Jan 2025)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {/* Vice President - Girls Who Code College Loop PSU */}
+            <div className="leadership-item" data-achievement="Empowered women in tech and fostered an inclusive coding community">
+              <div className="leadership-logo">
+                <img src="/images/gwc.jpeg" alt="Girls Who Code College Loop PSU Logo" className="club-logo" />
+              </div>
+              <div className="leadership-content">
+                <h3 className="leadership-title">Vice President</h3>
+                <p className="leadership-org">Girls Who Code College Loop PSU</p>
+                <p className="leadership-date">Aug 2023 – Jun 2024</p>
+                <div className="leadership-description">
+                  <p>Led initiatives to empower women in tech and foster an inclusive coding community at Penn State.</p>
+                  <ul className="leadership-achievements hidden">
+                    <li>Led club events and workshops</li>
+                    <li>Mentored new members</li>
+                    <li>Promoted diversity in tech</li>
+                    <li>Organized outreach programs</li>
+                    <li>Collaborated with national Girls Who Code network</li>
                   </ul>
                 </div>
               </div>
@@ -265,7 +283,7 @@ function App() {
             {/* Head of Growth and Strategy - Nittany AI Student Society */}
             <div className="leadership-item" data-achievement="Led growth strategy and entrepreneurship initiatives for AI community">
               <div className="leadership-logo">
-                <img src="/images/psu.png" alt="Nittany AI Student Society Logo" className="club-logo" />
+                <img src="/images/naiss.jpeg" alt="Nittany AI Student Society Logo" className="club-logo" />
               </div>
               <div className="leadership-content">
                 <h3 className="leadership-title">Head of Growth and Strategy Committee</h3>
@@ -286,7 +304,7 @@ function App() {
             {/* Tech Team Member - Nittany Entrepreneurship Society */}
             <div className="leadership-item" data-achievement="Contributed to club's digital infrastructure and tech operations">
               <div className="leadership-logo">
-                <img src="/images/psu.png" alt="Nittany Entrepreneurship Society Logo" className="club-logo" />
+                <img src="/images/nes.jpeg" alt="Nittany Entrepreneurship Society Logo" className="club-logo" />
               </div>
               <div className="leadership-content">
                 <h3 className="leadership-title">Tech Team Member</h3>
@@ -325,27 +343,6 @@ function App() {
                 </div>
               </div>
             </div>
-            {/* Vice President - Girls Who Code College Loop PSU */}
-            <div className="leadership-item" data-achievement="Empowered women in tech and fostered an inclusive coding community">
-              <div className="leadership-logo">
-                <img src="/images/gwc.png" alt="Girls Who Code College Loop PSU Logo" className="club-logo" />
-              </div>
-              <div className="leadership-content">
-                <h3 className="leadership-title">Vice President</h3>
-                <p className="leadership-org">Girls Who Code College Loop PSU</p>
-                <p className="leadership-date">Aug 2023 – Jun 2024</p>
-                <div className="leadership-description">
-                  <p>Led initiatives to empower women in tech and foster an inclusive coding community at Penn State.</p>
-                  <ul className="leadership-achievements hidden">
-                    <li>Led club events and workshops</li>
-                    <li>Mentored new members</li>
-                    <li>Promoted diversity in tech</li>
-                    <li>Organized outreach programs</li>
-                    <li>Collaborated with national Girls Who Code network</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -356,9 +353,39 @@ function App() {
         <div className="container">
           <h2 className="section-title">Today's Specials</h2>
           <div className="mosaic-grid">
-            {/* Row 1 */}
-            <div className="mosaic-item large">
-              {/* CropNSoil Project Card */}
+            {/* Dynamic Pattern Based on Content */}
+            
+            {/* Top Row: Snapchat (compact) + Passion (small photo) */}
+            <div className="mosaic-item snapchat-compact">
+              <div className="menu-item">
+                <div className="menu-item-header">
+                  <h3 className="dish-name">Snapchat Spectacles AR Fighting Game</h3>
+                  <span className="trophy-badge">💰</span>
+                </div>
+                <p className="menu-blurb">Immersive 4-element AR combat experience for Snapchat Spectacles</p>
+                <div className="ingredients">
+                  <span className="ingredient">TypeScript</span>
+                  <span className="ingredient">Unity</span>
+                  <span className="ingredient">Lens Studio</span>
+                </div>
+                <div className="award-info">
+                  <span className="award-text">Snapchat Accelerator Funding</span>
+                </div>
+              </div>
+            </div>
+            <div className="mosaic-item passion-small">
+              <div className="photo-card">
+                <div className="photo-image">
+                  <img src="/images/gal5.jpg" alt="Passion" />
+                </div>
+                <div className="photo-overlay">
+                  <h3 className="photo-title">Passion</h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Middle Left: CropNSoil (large, content-heavy) */}
+            <div className="mosaic-item cropnsoil-large">
               <div className="menu-item featured">
                 <div className="menu-item-header">
                   <h3 className="dish-name">CropNSoil - AI Multi-cropping Generator</h3>
@@ -378,67 +405,49 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="mosaic-item medium">
-              {/* Snapchat Project Card */}
-              <div className="menu-item">
-                <div className="menu-item-header">
-                  <h3 className="dish-name">Snapchat Spectacles AR Fighting Game</h3>
-                  <span className="trophy-badge">💰</span>
+
+            {/* Middle Right: Innovation (small photo) + SignEase (medium) */}
+            <div className="mosaic-item innovation-small">
+              <div className="photo-card">
+                <div className="photo-image">
+                  <img src="/images/gal3.jpg" alt="Innovation" />
                 </div>
-                <p className="menu-blurb">Immersive 4-element AR combat experience for Snapchat Spectacles</p>
-                <div className="ingredients">
-                  <span className="ingredient">TypeScript</span>
-                  <span className="ingredient">Unity</span>
-                  <span className="ingredient">Lens Studio</span>
-                </div>
-                <div className="award-info">
-                  <span className="award-text">Snapchat Accelerator Funding</span>
+                <div className="photo-overlay">
+                  <h3 className="photo-title">Innovation</h3>
                 </div>
               </div>
             </div>
-            <div className="mosaic-item wide">
-              {/* Creative Process Image */}
-              <div className="photo-card">
-                <div className="photo-image">
-                  <img src="/images/gal1.jpg" alt="Gallery Image 1" />
+            <div className="mosaic-item signease-medium">
+              <div className="menu-item signease">
+                <div className="menu-item-header">
+                  <h3 className="dish-name">SignEase - Sign Language Converter</h3>
+                  <span className="trophy-badge">🥉</span>
                 </div>
-                <div className="photo-overlay">
-                  <h3 className="photo-title">Creative Process</h3>
-                  <p className="photo-description">Behind the scenes of innovation</p>
+                <p className="menu-blurb">Real-time accessibility for Deaf community through computer vision</p>
+                <div className="ingredients">
+                  <span className="ingredient">TensorFlow</span>
+                  <span className="ingredient">Computer Vision</span>
+                  <span className="ingredient">Python</span>
+                </div>
+                <div className="award-info">
+                  <span className="award-text">3rd Place - HackPSU 2023</span>
                 </div>
               </div>
             </div>
 
-            {/* Row 2 */}
-            <div className="mosaic-item medium">
-              {/* MatchStick (HackMIT) Project Card */}
-              <div className="menu-item">
-                <div className="menu-item-header">
-                  <h3 className="dish-name">MatchStick - AI Team Builder for Hackathons & Startups</h3>
-                  <span className="trophy-badge">🎓</span>
+            {/* Bottom Row: Tech & Art (medium photo) + SNOM (large, content-heavy) + Creativity (small photo) */}
+            <div className="mosaic-item techart-medium">
+              <div className="photo-card">
+                <div className="photo-image">
+                  <img src="/images/gal2.png" alt="Tech & Art" />
                 </div>
-                <p className="menu-blurb">AI-based team-building app that forms well-rounded, compatible teams for hackathons and startups. Users upload a resume, and a conversational AI matches them with the best teammates based on skills, aspirations, and personality. The app uses smart bots and LLMs to ensure every team is set up for success.</p>
-                <div className="ingredients">
-                  <span className="ingredient">React</span>
-                  <span className="ingredient">Flask</span>
-                  <span className="ingredient">MongoDB</span>
-                  <span className="ingredient">Fetch API</span>
-                  <span className="ingredient">LLMs</span>
-                  <span className="ingredient">HTML</span>
-                  <span className="ingredient">CSS</span>
-                </div>
-                <div className="award-info">
-                  <span className="award-text">🎓 HackMIT 2024 Project</span>
-                </div>
-                <div style={{marginTop: '0.5rem'}}>
-                  <a href="https://github.com/jokzcooks/HackMIT-2024" target="_blank" rel="noopener noreferrer" style={{marginRight: '1rem', color: '#b86bff', textDecoration: 'underline'}}>GitHub</a>
-                  <a href="https://youtu.be/ojnhT5Wa7qQ" target="_blank" rel="noopener noreferrer" style={{color: '#ffd54f', textDecoration: 'underline'}}>Video Demo</a>
+                <div className="photo-overlay">
+                  <h3 className="photo-title">Tech & Art</h3>
                 </div>
               </div>
             </div>
-            <div className="mosaic-item large">
-              {/* SNOM Project Card */}
-              <div className="menu-item">
+            <div className="mosaic-item snom-large">
+              <div className="menu-item snom">
                 <div className="menu-item-header">
                   <h3 className="dish-name">SNOM - AI Companion for Neurodiverse Children</h3>
                   <span className="trophy-badge">🤖</span>
@@ -463,59 +472,13 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="mosaic-item small">
-              {/* SignEase Project Card */}
-              <div className="menu-item">
-                <div className="menu-item-header">
-                  <h3 className="dish-name">SignEase - Sign Language Converter</h3>
-                  <span className="trophy-badge">🥉</span>
-                </div>
-                <p className="menu-blurb">Real-time accessibility for Deaf community through computer vision</p>
-                <div className="ingredients">
-                  <span className="ingredient">TensorFlow</span>
-                  <span className="ingredient">Computer Vision</span>
-                  <span className="ingredient">Python</span>
-                </div>
-                <div className="award-info">
-                  <span className="award-text">3rd Place - HackPSU 2023</span>
-                </div>
-              </div>
-            </div>
-            <div className="mosaic-item small">
-              {/* EY Internship Project Card (Placeholder) */}
-              <div className="menu-item">
-                <div className="menu-item-header">
-                  <h3 className="dish-name">EY Internship Project</h3>
-                  <span className="trophy-badge">💼</span>
-                </div>
-                <p className="menu-blurb">[Project description here. Please provide details for accuracy.]</p>
-                <div className="ingredients">
-                  <span className="ingredient">[Tech Stack]</span>
-                </div>
-                <div className="award-info">
-                  <span className="award-text">💼 EY Internship</span>
-                </div>
-              </div>
-            </div>
-            <div className="mosaic-item small">
-              {/* Tech & Art Image */}
+            <div className="mosaic-item creativity-small">
               <div className="photo-card">
                 <div className="photo-image">
-                  <img src="/images/gal2.png" alt="Gallery Image 2" />
+                  <img src="/images/gal4.jpeg" alt="Creativity" />
                 </div>
                 <div className="photo-overlay">
-                  <h3 className="photo-title">Tech & Art</h3>
-                </div>
-              </div>
-            </div>
-            <div className="mosaic-item small">
-              {/* Passion Image */}
-              <div className="photo-card">
-                <div className="photo-image">
-                  <img src="/images/gal5.jpg" alt="Gallery Image 5" />
-                </div>
-                <div className="photo-overlay">
-                  <h3 className="photo-title">Passion</h3>
+                  <h3 className="photo-title">Creativity</h3>
                 </div>
               </div>
             </div>
@@ -690,3 +653,5 @@ function App() {
 }
 
 export default App;
+
+

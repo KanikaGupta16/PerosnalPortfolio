@@ -3,16 +3,16 @@ import './TechnicalToolkit.css';
 
 const skillGroups = [
   {
-    group: 'Expert, daily use',
-    skills: ['Python', 'Java', 'TypeScript']
+    group: 'Expert',
+    skills: ['Python', 'Java', 'React', 'Flask', 'TensorFlow']
   },
   {
-    group: 'Strong',
-    skills: ['React', 'Node.js', 'Flask', 'TensorFlow', 'JavaScript', 'C++']
+    group: 'Proficient',
+    skills: ['TypeScript', 'Node.js', 'JavaScript', 'SQL']
   },
   {
-    group: 'Light experience',
-    skills: ['Verilog', 'AutoCAD', 'C', 'Rust']
+    group: 'Familiar',
+    skills: ['C++', 'Verilog', 'AutoCAD', 'etc.']
   }
 ];
 
@@ -23,16 +23,16 @@ export default function TechnicalToolkit() {
         <h2 className="section-title">My Technical Toolkit</h2>
         <div className="measurement-row">
           <div className="measurement-card">
-            <span className="measurement-amount">3 cups</span>
-            <span className="measurement-label">Expert, daily use</span>
+            <span className="measurement-amount">Expert</span>
+            <span className="measurement-label">Mastery Level</span>
           </div>
           <div className="measurement-card">
-            <span className="measurement-amount">2 tbsp</span>
-            <span className="measurement-label">Strong</span>
+            <span className="measurement-amount">Proficient</span>
+            <span className="measurement-label">Strong Skills</span>
           </div>
           <div className="measurement-card">
-            <span className="measurement-amount">1 tsp</span>
-            <span className="measurement-label">Light experience</span>
+            <span className="measurement-amount">Familiar</span>
+            <span className="measurement-label">Basic Knowledge</span>
           </div>
         </div>
         <div className="ingredients-columns">

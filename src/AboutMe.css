@@ -263,11 +263,13 @@
 
 /* Removed ingredients-grid to allow full width layout */
 .ingredients-grid {
-  width: 100% !important;
+  width: 120% !important;
+  max-width: 1400px !important;
   display: flex;
   flex-direction: row;
   justify-content: stretch;
   align-items: stretch;
+  margin: 0 auto;
 }
 
 .ingredients-column {
@@ -308,7 +310,7 @@
 
 .ingredients-list li {
   padding: var(--spacing-sm) 0;
-  color: #654321;
+  color: #000000;
   font-size: 0.95rem;
   line-height: 1.5;
   border-bottom: 1px solid #f0f0f0;
@@ -325,7 +327,7 @@
 
 .ingredients-list li::before {
   content: '•';
-  color: #FFB6C1;
+  color: #b86bff;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -333,7 +335,7 @@
 }
 
 .ingredients-list li:hover {
-  color: #FFB6C1;
+  color: #b86bff;
   transform: translateX(4px);
 }
 
@@ -651,7 +653,7 @@ h4.section-header {
 
 .ingredients-list li {
   padding: 0.8rem 1rem 0.8rem 2rem;
-  color: #ff914d !important;
+  color: #000000 !important;
   font-size: 1.01rem;
   font-weight: 600;
   line-height: 1.4;
