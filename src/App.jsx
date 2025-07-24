@@ -18,8 +18,8 @@ function App() {
   
   const roles = ['AI Developer', 'Creative Problem Solver', 'Mentor', 'Tech Innovator'];
   const taglines = [
-    'Software Engineer | Product Builder | Problem Solver',
-    'Product-minded SWE: code, ship, iterate.'
+    'Software Engineer | Problem Solver',
+    'Product-minded SWE.'
   ];
   const typingSpeed = 100;
   const deletingSpeed = 50;
