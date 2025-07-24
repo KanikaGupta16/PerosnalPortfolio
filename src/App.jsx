@@ -498,9 +498,9 @@ function App() {
             <div className="trophy-shelf-row trophy-shelf-row-top">
               {/* Top awards: 1st place, best startup initiative */}
               <div className="trophy-card trophy-card-featured">
-                <div className="trophy-icon">🏆</div>
-                <div className="trophy-title trophy-title-large">First Place</div>
-                <div className="trophy-desc">Penn State Small Business Pitch Challenge</div>
+                <div className="trophy-icon">💰</div>
+                <div className="trophy-title trophy-title-large">Snapchat Accelerator Program</div>
+                <div className="trophy-desc">$35,000 Funding Award</div>
                 <div className="achievement-date">2024</div>
               </div>
               <div className="trophy-card trophy-card-featured">
@@ -511,8 +511,8 @@ function App() {
               </div>
               <div className="trophy-card trophy-card-featured trophy-card-initiative">
                 <div className="trophy-icon">🏆</div>
-                <div className="trophy-title">Best Startup Initiative</div>
-                <div className="trophy-desc">Nittany Entrepreneurship Society 2024</div>
+                <div className="trophy-title">First Prize</div>
+                <div className="trophy-desc">Small Business Pitch Competition - College of Engineering</div>
                 <div className="achievement-date">2024</div>
               </div>
             </div>
